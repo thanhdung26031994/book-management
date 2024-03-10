@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<form method="post">
+    <label for="code">Nhập code</label>
+    <input type="number" id="code" name="code">
+    <label for="phoneNumber">Nhập phone number</label>
+    <input type="text" id="phoneNumber" name="phoneNumber">
+    <input type="submit" value="Trả">
+</form>
 </body>
 </html>

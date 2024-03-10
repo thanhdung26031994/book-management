@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h3>Để mượn cuốn sách <span th:text="${book.title}"></span></h3>
+<form method="post" th:object="${user}">
+    <input type="hidden" th:field="*{id}">
+    <label for="phoneNumber">Nhập phone number</label>
+    <input type="text" id="phoneNumber" th:field="*{phoneNumber}">
+    <input type="submit" value="Mượn">
+</form>
 </body>
 </html>

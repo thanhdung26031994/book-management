@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head">
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<form th:object="${book}">
+  <table class="table table-dark table-striped">
+    <tr>
+      <th>Name: </th>
+      <td th:text="${book.title}"></td>
+    </tr>
+    <tr>
+      <th>Quantity</th>
+      <td th:text="${book.quantity}"></td>
+    </tr>
+    <tr>
+      <td>
+        <a th:href="@{/book/{id}/return(id=${book.id})}">Trả</a>
+      </td>
+      <td>
+        <a th:href="@{/book/{id}/borrow(id=${book.id})}">Mượn</a>
+      </td>
+    </tr>
+  </table>
+
+</form>
 </body>
 </html>
